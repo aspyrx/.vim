@@ -64,16 +64,14 @@ match OverLength /\%>80v.\+/
 " Always show status bar
 set laststatus=2
 
-" YouCompleteMe
-" Disable confirmation of extra conf file. WARNING: THIS IS POTENTIALLY DANGEROUS
-let g:ycm_confirm_extra_conf = 1
+" Don't show the mode
+set noshowmode
 
 " lightline.vim
 let g:lightline = {
-            \ 'colorscheme': 'wombat',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ], [ 'filename' ] ],
-            \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+            \   'right': [ [ 'ycm', 'syntastic', 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype' ] ],
             \ },
             \ 'component_function': {
             \   'filename': 'LightLineFilename',
@@ -82,12 +80,17 @@ let g:lightline = {
             \   'fileencoding': 'LightLineFileencoding',
             \ },
             \ 'component_expand': {
+            \   'ycm': 'LightLineYcm',
             \   'syntastic': 'SyntasticStatuslineFlag',
             \ },
             \ 'component_type': {
+            \   'ycm': 'error',
             \   'syntastic': 'error',
             \ },
-            \ 'subseparator': { 'left': '|', 'right': '|' }
+            \ 'subseparator': {
+            \   'left': '|',
+            \   'right': '|',
+            \ },
             \ }
 
 function! LightLineModified()
@@ -117,6 +120,12 @@ function! LightLineFileencoding()
     return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
 endfunction
 
+function! LightLineYcm()
+    let l:errs = youcompleteme#GetErrorCount()
+    let l:warns = youcompleteme#GetWarningCount()
+    return l:errs + l:warns > 0 ? l:errs . ' errs, ' . l:warns . ' warns' : ''
+endfunction
+
 " rainbow_parentheses.vim
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -138,8 +147,16 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" loclist mappings and next/prev wraparound
-nnoremap <leader>ll :lopen<cr>
+" YouCompleteMe
+let g:ycm_always_populate_location_list = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+" Disable confirmation of extra conf file. WARNING: THIS IS POTENTIALLY DANGEROUS
+let g:ycm_confirm_extra_conf = 0
+
+" ListToggle
+let g:lt_location_list_toggle_map = '<leader>ll'
+
+" loclist next/prev wraparound
 nnoremap <leader>ln :try<bar>lnext<bar>catch /^Vim\%((\a\+)\)\=:E\%(553\<bar>42\):/<bar>lfirst<bar>endtry<cr>
 nnoremap <leader>lN :try<bar>lprev<bar>catch /^Vim\%((\a\+)\)\=:E\%(553\<bar>42\):/<bar>llast<bar>endtry<cr>
 
