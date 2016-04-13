@@ -71,7 +71,7 @@ set noshowmode
 let g:lightline = {
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ], [ 'filename' ] ],
-            \   'right': [ [ 'ycm', 'syntastic', 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype' ] ],
+            \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype' ] ],
             \ },
             \ 'component_function': {
             \   'filename': 'LightLineFilename',
@@ -80,11 +80,9 @@ let g:lightline = {
             \   'fileencoding': 'LightLineFileencoding',
             \ },
             \ 'component_expand': {
-            \   'ycm': 'LightLineYcm',
             \   'syntastic': 'SyntasticStatuslineFlag',
             \ },
             \ 'component_type': {
-            \   'ycm': 'error',
             \   'syntastic': 'error',
             \ },
             \ 'subseparator': {
@@ -118,12 +116,6 @@ endfunction
 
 function! LightLineFileencoding()
     return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
-endfunction
-
-function! LightLineYcm()
-    let l:errs = youcompleteme#GetErrorCount()
-    let l:warns = youcompleteme#GetWarningCount()
-    return l:errs + l:warns > 0 ? l:errs . ' errs, ' . l:warns . ' warns' : ''
 endfunction
 
 " rainbow_parentheses.vim
