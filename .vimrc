@@ -57,9 +57,8 @@ command Wq wq
 command W w
 command Q q
 
-" Highlight lines that are too long
-highlight OverLength ctermbg=red ctermfg=white
-match OverLength /\%>80v.\+/
+" Highlight lines that are over 80 characters long
+set colorcolumn=80
 
 " Always show status bar
 set laststatus=2
