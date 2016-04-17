@@ -1,5 +1,3 @@
-call has("python3")
-
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
