@@ -58,7 +58,7 @@ command W w
 command Q q
 
 " Highlight lines that are over 80 characters long
-set colorcolumn=80
+set colorcolumn=81
 
 " Always show status bar
 set laststatus=2
