@@ -13,9 +13,6 @@
 [submodule "bundle/rainbow_parentheses.vim"]
 	path = bundle/rainbow_parentheses.vim
 	url = https://github.com/eapache/rainbow_parentheses.vim
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic
 [submodule "bundle/vim-go"]
 	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go
@@ -34,3 +31,6 @@
 [submodule "bundle/ListToggle"]
 	path = bundle/ListToggle
 	url = https://github.com/Valloric/ListToggle
+[submodule "bundle/neomake"]
+	path = bundle/neomake
+	url = https://github.com/benekastah/neomake

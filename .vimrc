@@ -1,7 +1,6 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-set t_Co=256 "256 color
 colorscheme meta5
 
 set encoding=utf-8 "UTF-8 character encoding
@@ -23,18 +22,23 @@ set incsearch  "Start searching immediately
 set scrolloff=5  "Never scroll off
 set wildmode=longest,list  "Better unix-like tab completion
 set cursorline  "Highlight current line
-set clipboard=unnamed  "Copy and paste from system clipboard
 set lazyredraw  "Don't redraw while running macros (faster)
 set autochdir  "Change directory to currently open file
-set nocompatible  "Kill vi-compatibility
 set wrap  "Visually wrap lines
 set linebreak  "Only wrap on 'good' characters for wrapping
 set backspace=indent,eol,start  "Better backspacing
 set linebreak  "Intelligently wrap long files
-set ttyfast  "Speed up vim
 set nostartofline "Vertical movement preserves horizontal position
 set number "Line numbers
 set conceallevel=1 "Enable concealing characters
+
+" vim-specific configs
+if (!has("nvim"))
+    set nocompatible  "Kill vi-compatibility
+    set ttyfast  "Speed up vim
+    set clipboard=unnamed  "Copy and paste from system clipboard
+endif
+
 imap jk <Esc>
 "With a map leader it's possible to do extra key combinations
 "like <leader>w saves the current file
@@ -131,12 +135,6 @@ let g:javascript_conceal_this       = "@"
 let g:javascript_conceal_return     = "←"
 let g:javascript_conceal_undefined  = "¿"
 let g:javascript_conceal_prototype  = "¶"
-
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " YouCompleteMe
 let g:ycm_always_populate_location_list = 1
