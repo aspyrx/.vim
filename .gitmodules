@@ -1,9 +1,6 @@
 [submodule "bundle/aftersyntaxc.vim"]
 	path = bundle/aftersyntaxc.vim
 	url = https://github.com/vim-scripts/aftersyntaxc.vim
-[submodule "bundle/Conque-GDB"]
-	path = bundle/Conque-GDB
-	url = https://github.com/vim-scripts/Conque-GDB
 [submodule "bundle/lightline.vim"]
 	path = bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
