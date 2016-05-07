@@ -26,13 +26,16 @@ set wildmode=longest,list  "Better unix-like tab completion
 set cursorline  "Highlight current line
 set lazyredraw  "Don't redraw while running macros (faster)
 set autochdir  "Change directory to currently open file
-set wrap  "Visually wrap lines
 set linebreak  "Only wrap on 'good' characters for wrapping
 set backspace=indent,eol,start  "Better backspacing
 set linebreak  "Intelligently wrap long files
 set nostartofline "Vertical movement preserves horizontal position
 set number "Line numbers
 set conceallevel=1 "Enable concealing characters
+set nowrap "Don't wrap lines
+set sidescroll=1 "Smooth scrolling
+set listchars=extends:>,precedes:< "Overflow indicators
+set sidescrolloff=999 "Keep cursor effectively centered on overflowing lines
 
 " vim-specific configs
 if (!has("nvim"))
