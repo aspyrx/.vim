@@ -37,11 +37,28 @@ set sidescroll=1 "Smooth scrolling
 set listchars=extends:>,precedes:< "Overflow indicators
 set sidescrolloff=999 "Keep cursor effectively centered on overflowing lines
 
-" vim-specific configs
+set showtabline=2 "File tabs always visible
+nnoremap <S-tab> :tabprevious<cr>
+nnoremap <tab> :tabnext<cr>
+nnoremap <C-t> :tabnew<cr>
+
+" Rebind moving around windows to Ctrl+{h,j,k,l}
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 if (!has("nvim"))
+	" vim-specific configs
     set nocompatible  "Kill vi-compatibility
     set ttyfast  "Speed up vim
     set clipboard=unnamed  "Copy and paste from system clipboard
+else
+	" neovim-specific configs
+	tnoremap <C-h> <C-\><C-n><C-w>h
+    tnoremap <C-j> <C-\><C-n><C-w>j
+    tnoremap <C-k> <C-\><C-n><C-w>k
+    tnoremap <C-l> <C-\><C-n><C-w>l
 endif
 
 imap jk <Esc>
