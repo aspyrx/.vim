@@ -35,7 +35,7 @@ set conceallevel=1 "Enable concealing characters
 set nowrap "Don't wrap lines
 set sidescroll=1 "Smooth scrolling
 set listchars=extends:>,precedes:< "Overflow indicators
-set sidescrolloff=999 "Keep cursor effectively centered on overflowing lines
+set sidescrolloff=1 "Keep cursor from scrolling onto overflow indicator
 
 set showtabline=2 "File tabs always visible
 nnoremap <S-tab> :tabprevious<cr>
