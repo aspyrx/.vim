@@ -38,8 +38,8 @@ set listchars=extends:>,precedes:< "Overflow indicators
 set sidescrolloff=1 "Keep cursor from scrolling onto overflow indicator
 
 set showtabline=2 "File tabs always visible
-nnoremap <S-tab> :tabprevious<cr>
-nnoremap <tab> :tabnext<cr>
+nnoremap <C-S-tab> :tabprevious<cr>
+nnoremap <C-tab> :tabnext<cr>
 nnoremap <C-t> :tabnew<cr>
 
 " Rebind moving around windows to Ctrl+{h,j,k,l}
