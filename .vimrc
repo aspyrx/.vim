@@ -158,6 +158,14 @@ let g:javascript_conceal_return     = "←"
 let g:javascript_conceal_undefined  = "¿"
 let g:javascript_conceal_prototype  = "¶"
 
+" neomake settings
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
+let g:neomake_logfile = '/usr/local/var/log/neomake.log'
+autocmd! BufWritePost * Neomake
+
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
 " YouCompleteMe
 let g:ycm_always_populate_location_list = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
