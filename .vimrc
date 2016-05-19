@@ -161,7 +161,6 @@ let g:javascript_conceal_prototype  = "¶"
 " neomake settings
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_logfile = '/usr/local/var/log/neomake.log'
 autocmd! BufWritePost * Neomake
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
