@@ -38,8 +38,8 @@ set listchars=extends:>,precedes:< "Overflow indicators
 set sidescrolloff=1 "Keep cursor from scrolling onto overflow indicator
 
 set showtabline=2 "File tabs always visible
-nnoremap <C-S-tab> :tabprevious<cr>
-nnoremap <C-tab> :tabnext<cr>
+nnoremap <Esc>[1;6I :tabprevious<cr>
+nnoremap <Esc>[1;5I :tabnext<cr>
 nnoremap <C-t> :tabnew<cr>
 
 " Rebind moving around windows to Ctrl+{h,j,k,l}
@@ -53,6 +53,7 @@ if (!has("nvim"))
     set nocompatible  "Kill vi-compatibility
     set ttyfast  "Speed up vim
     set clipboard=unnamed  "Copy and paste from system clipboard
+    set mouse=a "Enable mouse support
 else
 	" neovim-specific configs
 	tnoremap <C-h> <C-\><C-n><C-w>h
@@ -95,10 +96,12 @@ set noshowmode
 " lightline.vim
 let g:lightline = {
             \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ], [ 'filename' ] ],
+            \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], [ 'ctrlpmark' ] ],
             \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype' ] ],
             \ },
             \ 'component_function': {
+            \   'mode': 'LightLineMode',
+            \   'ctrlpmark': 'LightLineCtrlPMark',
             \   'filename': 'LightLineFilename',
             \   'fileformat': 'LightLineFileformat',
             \   'filetype': 'LightLineFiletype',
@@ -115,6 +118,39 @@ let g:lightline = {
             \   'right': '|',
             \ },
             \ }
+
+function! LightLineMode()
+    let fname = expand('%:t')
+    return fname == 'ControlP' ? 'CtrlP' :
+                \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+function! LightLineCtrlPMark()
+    if expand('%:t') =~ 'ControlP' && has_key(g:lightline, 'ctrlp_item')
+        call lightline#link('iR'[g:lightline.ctrlp_regex])
+        return lightline#concatenate([g:lightline.ctrlp_prev, g:lightline.ctrlp_item
+                    \ , g:lightline.ctrlp_next], 0)
+    else
+        return ''
+    endif
+endfunction
+
+let g:ctrlp_status_func = {
+  \ 'main': 'CtrlPStatusFunc_1',
+  \ 'prog': 'CtrlPStatusFunc_2',
+  \ }
+
+function! CtrlPStatusFunc_1(focus, byfname, regex, prev, item, next, marked)
+  let g:lightline.ctrlp_regex = a:regex
+  let g:lightline.ctrlp_prev = a:prev
+  let g:lightline.ctrlp_item = a:item
+  let g:lightline.ctrlp_next = a:next
+  return lightline#statusline(0)
+endfunction
+
+function! CtrlPStatusFunc_2(str)
+  return lightline#statusline(0)
+endfunction
 
 function! LightLineModified()
     return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -161,7 +197,7 @@ let g:javascript_conceal_prototype  = "¶"
 " neomake settings
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
-autocmd! BufReadPost,BufWritePost *.js,*.jsx Neomake
+autocmd! BufWritePost * Neomake
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
