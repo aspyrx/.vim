@@ -38,8 +38,12 @@ set listchars=extends:>,precedes:< "Overflow indicators
 set sidescrolloff=1 "Keep cursor from scrolling onto overflow indicator
 
 set showtabline=2 "File tabs always visible
-nnoremap <Esc>[1;6I :tabprevious<cr>
-nnoremap <Esc>[1;5I :tabnext<cr>
+
+let mapleader = "<space>"
+let g:mapleader = "<space>"
+
+nnoremap <leader>T :tabprevious<cr>
+nnoremap <leader>t :tabnext<cr>
 nnoremap <C-t> :tabnew<cr>
 
 " Rebind moving around windows to Ctrl+{h,j,k,l}
@@ -63,11 +67,6 @@ else
 endif
 
 imap jk <Esc>
-"With a map leader it's possible to do extra key combinations
-"like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
-
 "Fast saving
 nmap <leader>w :w!<cr>
 
