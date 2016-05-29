@@ -42,9 +42,9 @@ set showtabline=2 "File tabs always visible
 let mapleader = "\<Space>"
 let g:mapleader = "\<Space>"
 
-nnoremap <leader>T :tabprevious<cr>
-nnoremap <leader>t :tabnext<cr>
-nnoremap <C-t> :tabnew<cr>
+nnoremap <silent> <leader>T :tabprevious<cr>
+nnoremap <silent> <leader>t :tabnext<cr>
+nnoremap <silent> <C-t> :tabnew<cr>
 
 " Rebind moving around windows to Ctrl+{h,j,k,l}
 nnoremap <C-h> <C-w>h
