@@ -39,8 +39,8 @@ set sidescrolloff=1 "Keep cursor from scrolling onto overflow indicator
 
 set showtabline=2 "File tabs always visible
 
-let mapleader = "<space>"
-let g:mapleader = "<space>"
+let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 
 nnoremap <leader>T :tabprevious<cr>
 nnoremap <leader>t :tabnext<cr>
