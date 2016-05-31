@@ -206,6 +206,10 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " Disable confirmation of extra conf file. WARNING: THIS IS POTENTIALLY DANGEROUS
 let g:ycm_confirm_extra_conf = 0
 
+" vim-localvimrc
+" Disable confirmation of extra vimrc file. WARNING: THIS IS POTENTIALLY DANGEROUS
+let g:localvimrc_ask = 0
+
 " ListToggle
 let g:lt_location_list_toggle_map = '<leader>ll'
 
