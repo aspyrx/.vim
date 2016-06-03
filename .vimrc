@@ -64,6 +64,11 @@ else
     tnoremap <C-j> <C-\><C-n><C-w>j
     tnoremap <C-k> <C-\><C-n><C-w>k
     tnoremap <C-l> <C-\><C-n><C-w>l
+
+    " neomake settings
+    let g:neomake_javascript_enabled_makers = ['eslint']
+    let g:neomake_jsx_enabled_makers = ['eslint']
+    autocmd! BufReadPost,BufWritePost * Neomake
 endif
 
 imap jk <Esc>
@@ -192,11 +197,6 @@ let g:javascript_conceal_this       = "@"
 let g:javascript_conceal_return     = "←"
 let g:javascript_conceal_undefined  = "¿"
 let g:javascript_conceal_prototype  = "¶"
-
-" neomake settings
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-autocmd! BufWritePost * Neomake
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
