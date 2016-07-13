@@ -218,3 +218,6 @@ let g:lt_location_list_toggle_map = '<leader>ll'
 nnoremap <leader>ln :try<bar>lnext<bar>catch /^Vim\%((\a\+)\)\=:E\%(553\<bar>42\):/<bar>lfirst<bar>endtry<cr>
 nnoremap <leader>lN :try<bar>lprev<bar>catch /^Vim\%((\a\+)\)\=:E\%(553\<bar>42\):/<bar>llast<bar>endtry<cr>
 
+" vim-markdown
+let g:markdown_fenced_languages = ['html', 'javascript', 'jsx']
+
