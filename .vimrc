@@ -36,7 +36,6 @@ set nowrap "Don't wrap lines
 set sidescroll=1 "Smooth scrolling
 set listchars=extends:>,precedes:< "Overflow indicators
 set sidescrolloff=1 "Keep cursor from scrolling onto overflow indicator
-set backupcopy=yes "Copy on backup
 
 set showtabline=2 "File tabs always visible
 
@@ -97,6 +96,9 @@ set laststatus=2
 
 " Don't show the mode
 set noshowmode
+
+" Copy on backup
+set backupcopy=yes
 
 " lightline.vim
 let g:lightline = {
