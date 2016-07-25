@@ -69,6 +69,9 @@ else
     let g:neomake_javascript_enabled_makers = ['eslint']
     let g:neomake_jsx_enabled_makers = ['eslint']
     autocmd! BufReadPost,BufWritePost * Neomake
+
+    " enable deoplete
+    call deoplete#enable()
 endif
 
 imap jk <Esc>
@@ -202,12 +205,6 @@ let g:javascript_conceal_undefined  = "¿"
 let g:javascript_conceal_prototype  = "¶"
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-
-" YouCompleteMe
-let g:ycm_always_populate_location_list = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-" Disable confirmation of extra conf file. WARNING: THIS IS POTENTIALLY DANGEROUS
-let g:ycm_confirm_extra_conf = 0
 
 " vim-localvimrc
 " Disable confirmation of extra vimrc file. WARNING: THIS IS POTENTIALLY DANGEROUS
