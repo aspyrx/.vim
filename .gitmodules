@@ -22,9 +22,6 @@
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
 [submodule "bundle/ListToggle"]
 	path = bundle/ListToggle
 	url = https://github.com/Valloric/ListToggle
