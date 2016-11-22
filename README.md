@@ -8,3 +8,6 @@ My Vim configuration. Works with Vim, but some plugins require [Neovim]
 3. `cd ~/.vim`
 4. Fetch the dependency plugins: `git submodule update --init --recursive`
 
+### Screenshot
+![Screenshot](screenshot.png)
+
