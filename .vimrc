@@ -69,7 +69,6 @@ else
     let g:neomake_javascript_enabled_makers = ['eslint']
     let g:neomake_jsx_enabled_makers = ['eslint']
     autocmd! BufReadPost,BufWritePost * Neomake
-    autocmd! BufReadPost,BufWritePost * Neomake!
 
     " enable deoplete
     call deoplete#enable()
