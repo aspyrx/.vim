@@ -1,8 +1,10 @@
 # .vim
-My Vim configuration.
+My Vim configuration. Works with Vim, but some plugins require [Neovim]
+(https://github.com/neovim/neovim).
 
 ### Usage
-1. Clone the repository.
-2. Symlink ```~/.vimrc``` to the ```.vimrc``` in this repository.
-3. In the repository directory, run ```git submodule update --init --recursive``` to fetch the dependency plugins.
-4. Build YouCompleteMe (see [the YouCompleteMe docs](https://github.com/Valloric/YouCompleteMe)).
+1. Clone the repository: `git clone https://github.com/aspyrx/.vim ~/.vim`
+2. Symlink `~/.vimrc` to the `.vimrc` in this repository: `ln -s ~/.vim/.vimrc ~/.vimrc`
+3. `cd ~/.vim`
+4. Fetch the dependency plugins: `git submodule update --init --recursive`
+
