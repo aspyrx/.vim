@@ -52,3 +52,9 @@
 [submodule "bundle/deoplete.nvim"]
 	path = bundle/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
+[submodule "bundle/deoplete-ternjs"]
+	path = bundle/deoplete-ternjs
+	url = https://github.com/carlitux/deoplete-ternjs
+[submodule "bundle/neomake-local-eslint.vim"]
+	path = bundle/neomake-local-eslint.vim
+	url = https://github.com/benjie/neomake-local-eslint.vim
