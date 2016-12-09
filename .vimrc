@@ -65,17 +65,20 @@ else
     tnoremap <C-k> <C-\><C-n><C-w>k
     tnoremap <C-l> <C-\><C-n><C-w>l
 
+    if (exists('&inccommand'))
+        set inccommand=split
+    endif
+
     " neomake settings
     let g:neomake_javascript_enabled_makers = ['eslint']
     let g:neomake_jsx_enabled_makers = ['eslint']
     autocmd! BufReadPost,BufWritePost * Neomake
 
+    " deoplete-ternjs
+    let g:tern_request_timeout = 1
+
     " deoplete
     let g:deoplete#enable_at_startup = 1
-
-    if (exists('&inccommand'))
-        set inccommand=split
-    endif
 
     inoremap <silent><expr> <TAB>
                 \ pumvisible() ? "\<C-n>" :
