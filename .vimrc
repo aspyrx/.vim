@@ -70,8 +70,8 @@ else
     let g:neomake_jsx_enabled_makers = ['eslint']
     autocmd! BufReadPost,BufWritePost * Neomake
 
-    " enable deoplete
-    call deoplete#enable()
+    " deoplete
+    let g:deoplete#enable_at_startup = 1
 
     if (exists('&inccommand'))
         set inccommand=split
