@@ -73,6 +73,10 @@ else
     " enable deoplete
     call deoplete#enable()
 
+    if (exists('&inccommand'))
+        set inccommand=split
+    endif
+
     inoremap <silent><expr> <TAB>
                 \ pumvisible() ? "\<C-n>" :
                 \ <SID>check_back_space() ? "\<TAB>" :
