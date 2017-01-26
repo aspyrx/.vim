@@ -235,6 +235,6 @@ nnoremap <leader>lN :try<bar>lprev<bar>catch /^Vim\%((\a\+)\)\=:E\%(553\<bar>42\
 
 " vim-markdown
 let g:markdown_fenced_languages = [
-            \ 'html', 'javascript', 'jsx', 'c', 'sh'
+            \ 'html', 'javascript', 'jsx', 'c', 'asm', 'sh'
             \ ]
 
