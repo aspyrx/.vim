@@ -36,6 +36,7 @@ set nowrap "Don't wrap lines
 set sidescroll=1 "Smooth scrolling
 set listchars=extends:>,precedes:< "Overflow indicators
 set sidescrolloff=1 "Keep cursor from scrolling onto overflow indicator
+set mouse=a "Enable mouse support
 
 set showtabline=2 "File tabs always visible
 
@@ -57,7 +58,6 @@ if (!has("nvim"))
     set nocompatible  "Kill vi-compatibility
     set ttyfast  "Speed up vim
     set clipboard=unnamed  "Copy and paste from system clipboard
-    set mouse=a "Enable mouse support
 else
 	" neovim-specific configs
 	tnoremap <C-h> <C-\><C-n><C-w>h
