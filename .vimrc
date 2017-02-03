@@ -226,6 +226,9 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " Disable confirmation of extra vimrc file. WARNING: THIS IS POTENTIALLY DANGEROUS
 let g:localvimrc_ask = 0
 
+" Disable sandboxing of extra vimrc file. WARNING: THIS IS POTENTIALLY DANGEROUS
+let g:localvimrc_sandbox = 0
+
 " ListToggle
 let g:lt_location_list_toggle_map = '<leader>ll'
 
