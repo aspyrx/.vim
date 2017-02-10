@@ -58,3 +58,6 @@
 [submodule "bundle/neomake-local-eslint.vim"]
 	path = bundle/neomake-local-eslint.vim
 	url = https://github.com/benjie/neomake-local-eslint.vim
+[submodule "bundle/arm-syntax-vim"]
+	path = bundle/arm-syntax-vim
+	url = https://github.com/ARM9/arm-syntax-vim
