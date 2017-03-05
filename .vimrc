@@ -34,7 +34,7 @@ set number "Line numbers
 set conceallevel=1 "Enable concealing characters
 set nowrap "Don't wrap lines
 set sidescroll=1 "Smooth scrolling
-set listchars=extends:>,precedes:< "Overflow indicators
+set listchars=extends:,precedes: "Overflow indicators
 set sidescrolloff=1 "Keep cursor from scrolling onto overflow indicator
 set mouse=a "Enable mouse support
 
@@ -123,7 +123,7 @@ set backupcopy=yes
 let g:lightline = {
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ], [ 'filename' ], [ 'ctrlpmark' ] ],
-            \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype' ] ],
+            \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype' ] ],
             \ },
             \ 'component_function': {
             \   'mode': 'LightLineMode',
@@ -133,16 +133,8 @@ let g:lightline = {
             \   'filetype': 'LightLineFiletype',
             \   'fileencoding': 'LightLineFileencoding',
             \ },
-            \ 'component_expand': {
-            \   'syntastic': 'SyntasticStatuslineFlag',
-            \ },
-            \ 'component_type': {
-            \   'syntastic': 'error',
-            \ },
-            \ 'subseparator': {
-            \   'left': '|',
-            \   'right': '|',
-            \ },
+            \ 'separator': { 'left': '', 'right': '' },
+            \ 'subseparator': { 'left': '', 'right': '' }
             \ }
 
 function! LightLineMode()
@@ -183,7 +175,7 @@ function! LightLineModified()
 endfunction
 
 function! LightLineReadonly()
-    return &ft !~? 'help' && &readonly ? 'RO' : ''
+    return &ft !~? 'help' && &readonly ? '' : ''
 endfunction
 
 function! LightLineFilename()
@@ -233,8 +225,8 @@ let g:localvimrc_sandbox = 0
 let g:lt_location_list_toggle_map = '<leader>ll'
 
 " loclist next/prev wraparound
-nnoremap <leader>ln :try<bar>lnext<bar>catch /^Vim\%((\a\+)\)\=:E\%(553\<bar>42\):/<bar>lfirst<bar>endtry<cr>
-nnoremap <leader>lN :try<bar>lprev<bar>catch /^Vim\%((\a\+)\)\=:E\%(553\<bar>42\):/<bar>llast<bar>endtry<cr>
+nnoremap <silent> <leader>ln :silent! try<bar>lnext<bar>catch /^Vim\%((\a\+)\)\=:E\(553\<bar>42\):/<bar>lfirst<bar>catch<bar>endtry<cr>
+nnoremap <silent> <leader>lN :silent! try<bar>lprev<bar>catch /^Vim\%((\a\+)\)\=:E\(553\<bar>42\):/<bar>llast<bar>catch<bar>endtry<cr>
 
 " vim-markdown
 let g:markdown_fenced_languages = [

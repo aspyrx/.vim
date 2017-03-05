@@ -11,3 +11,6 @@ My Vim configuration. Works with Vim, but some plugins require [Neovim]
 ### Screenshot
 ![Screenshot](screenshot.png)
 
+The font is [Fira Code](https://github.com/tonsky/FiraCode). Note that a font
+that supports/is patched with the powerline symbols is recommended.
+
