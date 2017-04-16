@@ -61,3 +61,6 @@
 [submodule "bundle/arm-syntax-vim"]
 	path = bundle/arm-syntax-vim
 	url = https://github.com/ARM9/arm-syntax-vim
+[submodule "bundle/vim-solidity"]
+	path = bundle/vim-solidity
+	url = https://github.com/tomlion/vim-solidity
