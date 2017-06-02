@@ -55,12 +55,12 @@
 [submodule "bundle/deoplete-ternjs"]
 	path = bundle/deoplete-ternjs
 	url = https://github.com/carlitux/deoplete-ternjs
-[submodule "bundle/neomake-local-eslint.vim"]
-	path = bundle/neomake-local-eslint.vim
-	url = https://github.com/benjie/neomake-local-eslint.vim
 [submodule "bundle/arm-syntax-vim"]
 	path = bundle/arm-syntax-vim
 	url = https://github.com/ARM9/arm-syntax-vim
 [submodule "bundle/vim-solidity"]
 	path = bundle/vim-solidity
 	url = https://github.com/tomlion/vim-solidity
+[submodule "bundle/neomake-local-eslint-first"]
+	path = bundle/neomake-local-eslint-first
+	url = https://github.com/jaawerth/neomake-local-eslint-first
