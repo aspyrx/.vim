@@ -81,7 +81,7 @@ else
     " neomake settings
     let g:neomake_javascript_enabled_makers = ['eslint']
     let g:neomake_jsx_enabled_makers = ['eslint']
-    autocmd! BufReadPost,BufWritePost * Neomake
+    call neomake#configure#automake('nw', 500)
 
     " deoplete-ternjs
     let g:tern_request_timeout = 1
