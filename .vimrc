@@ -104,7 +104,18 @@ imap jk <Esc>
 nmap <leader>w :w!<cr>
 
 " Strip whitespace from end of lines when writing file
-autocmd BufWritePre * :%s/\s\+$//e
+function! <SID>StripTrailingWhitespaces()
+    if &filetype == 'diff'
+        return
+    endif
+
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Syntax highlighting and stuff
 filetype plugin indent on
