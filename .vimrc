@@ -39,6 +39,7 @@ set sidescroll=1 "Smooth scrolling
 set listchars=extends:,precedes: "Overflow indicators
 set sidescrolloff=1 "Keep cursor from scrolling onto overflow indicator
 set mouse=a "Enable mouse support
+set cinoptions=(0,Ws,m1 " C-indenting: open/close () aligned to outer context
 
 set showtabline=2 "File tabs always visible
 
