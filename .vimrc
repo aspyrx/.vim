@@ -43,7 +43,9 @@ set mouse=a "Enable mouse support
 " C-indenting:
 " - open/close () aligned to outer context
 " - do not add extra indent for scope declarations
-set cinoptions=(0,Ws,m1,g0
+" - indent Java/JS inline funcs/classes correctly
+set cinoptions=(0,Ws,m1,g0,j1,J1
+let g:javascript_indent_W_pat = '[^[:blank:]{[]'
 
 set showtabline=2 "File tabs always visible
 
