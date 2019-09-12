@@ -32,7 +32,6 @@ set backspace=indent,eol,start  "Better backspacing
 set linebreak  "Intelligently wrap long files
 set nostartofline "Vertical movement preserves horizontal position
 set number "Line numbers
-set relativenumber "Relative line numbers
 set conceallevel=1 "Enable concealing characters
 set nowrap "Don't wrap lines
 set sidescroll=1 "Smooth scrolling
