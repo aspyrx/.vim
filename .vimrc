@@ -48,13 +48,6 @@ let g:javascript_indent_W_pat = '[^[:blank:]{[]'
 
 set showtabline=2 "File tabs always visible
 
-" Turn on/off relative line numbers automatically
-augroup numbertoggle
-    autocmd!
-    autocmd WinEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd WinLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
-
 let mapleader = "\<Space>"
 let g:mapleader = "\<Space>"
 
