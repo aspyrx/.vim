@@ -113,6 +113,9 @@ else
         let col = col('.') - 1
         return !col || getline('.')[col - 1]  =~ '\s'
     endfunction"}}}
+
+    inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+    inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 endif
 
 imap jk <Esc>
