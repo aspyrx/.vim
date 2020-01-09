@@ -77,6 +77,23 @@ else
         set inccommand=split
     endif
 
+    function! Osc52Copy(lines)
+        let base64 = system('base64', a:lines)
+        call chansend(v:stderr, printf("\033]52;c;%s\07", base64))
+    endfunction
+
+    let g:clipboard = {
+                \   'name': 'osc52',
+                \   'copy': {
+                \       '*': { lines, regtype -> Osc52Copy(lines) },
+                \       '+': { lines, regtype -> Osc52Copy(lines) },
+                \   },
+                \   'paste': {
+                \       '+': { -> [] },
+                \       '*': { -> [] },
+                \   },
+                \ }
+
     " neomake settings
     let g:neomake_javascript_enabled_makers = ['eslint']
     let g:neomake_jsx_enabled_makers = ['eslint']
