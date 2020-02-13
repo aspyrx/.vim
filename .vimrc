@@ -14,7 +14,7 @@ set autoindent  "autoindent on new lines
 set showmatch  "Highlight matching braces
 set ruler  "Show bottom ruler
 set equalalways  "Split windows equal size
-set formatoptions+=croq  "Enable comment line auto formatting
+set formatoptions+=ncroq  "Enable comment line auto formatting
 set textwidth=80 "80-column text formatting
 set wildignore+=*.o,*.obj,*.class,*.swp,*.pyc,node_modules "Ignore junk files
 set title  "Set window title to file
