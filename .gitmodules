@@ -64,3 +64,6 @@
 [submodule "bundle/neomake-local-eslint-first"]
 	path = bundle/neomake-local-eslint-first
 	url = https://github.com/jaawerth/neomake-local-eslint-first
+[submodule "bundle/nvimux-navigator"]
+	path = bundle/nvimux-navigator
+	url = https://github.com/emilienlemaire/nvimux-navigator
