@@ -269,6 +269,7 @@ nnoremap <silent> <leader>lN :silent! try<bar>lprev<bar>catch /^Vim\%((\a\+)\)\=
 
 " vim-markdown
 let g:markdown_fenced_languages = [
-            \ 'html', 'js=javascript', 'jsx=javascript', 'c', 'asm', 'arm', 'sh'
+            \ 'html', 'js=javascript', 'jsx=javascript', 'c', 'asm', 'arm',
+            \ 'sh', 'python', 'diff'
             \ ]
 
