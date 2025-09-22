@@ -61,6 +61,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" completion options
+set completeopt+=menuone,noinsert,popup
+
 if (!has("nvim"))
 	" vim-specific configs
     set nocompatible  "Kill vi-compatibility
@@ -98,24 +101,6 @@ else
     let g:neomake_javascript_enabled_makers = ['eslint']
     let g:neomake_jsx_enabled_makers = ['eslint']
     call neomake#configure#automake('nw', 500)
-
-    " deoplete-ternjs
-    let g:tern_request_timeout = 1
-
-    " deoplete
-    let g:deoplete#enable_at_startup = 1
-
-    inoremap <silent><expr> <TAB>
-                \ pumvisible() ? "\<C-n>" :
-                \ <SID>check_back_space() ? "\<TAB>" :
-                \ deoplete#mappings#manual_complete()
-    function! s:check_back_space() abort "{{{
-        let col = col('.') - 1
-        return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction"}}}
-
-    inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 endif
 
 imap jk <Esc>
