@@ -76,6 +76,9 @@ else
     tnoremap <C-k> <C-\><C-n><C-w>k
     tnoremap <C-l> <C-\><C-n><C-w>l
 
+    " window options
+    set winborder=rounded
+
     if (exists('&inccommand'))
         set inccommand=split
     endif

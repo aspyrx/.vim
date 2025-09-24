@@ -1,10 +1,8 @@
 vim.diagnostic.config({
     virtual_text = true,
     float = {
-        border = 'rounded',
         focusable = false,
         scope = 'cursor',
-        style = 'minimal',
     },
 })
 
