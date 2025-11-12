@@ -39,6 +39,10 @@ set listchars=extends:,precedes: "Overflow indicators
 set sidescrolloff=1 "Keep cursor from scrolling onto overflow indicator
 set mouse=a "Enable mouse support
 
+if index(["xterm-256color", "tmux-256color"], $TERM) != -1
+    set termguicolors "Enable RGB color support
+endif
+
 " C-indenting:
 " - open/close () aligned to outer context
 " - do not add extra indent for scope declarations
