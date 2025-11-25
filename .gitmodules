@@ -67,3 +67,12 @@
 [submodule "bundle/nvim-lspconfig"]
 	path = bundle/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
+[submodule "bundle/nvim-cmp"]
+	path = bundle/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "bundle/cmp-nvim-lsp"]
+	path = bundle/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "bundle/cmp-buffer"]
+	path = bundle/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer

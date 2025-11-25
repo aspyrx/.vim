@@ -12,3 +12,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
+-- ensure `cmp_nvim_lsp` capabilities are available
+vim.lsp.config('*', {
+    capabilities = require('cmp_nvim_lsp').default_capabilities()
+})
+
